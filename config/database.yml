@@ -1,0 +1,20 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: appdip2_development
+
+test:
+  <<: *default
+  database: appdip2_test
+
+production:
+  <<: *default
+  database: appdip2_production
+  username: appdip2
+  password: <%= ENV['PIKABURUBY_DATABASE_PASSWORD'] %>

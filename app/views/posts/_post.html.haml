@@ -1,0 +1,33 @@
+.card
+  .card-header
+    = link_to post.title, post
+    / = post.title
+  .card-body
+    = post.content
+  .card-footer
+    = post.created_at
+    /= link_to 'Показать', post
+    /= link_to 'Редактировать', edit_post_path(post)
+    -if current_user
+      - if post.user == current_user
+        %div{:style => "float:right"} 
+          .btn-group
+            = link_to edit_post_path(post), class: 'btn btn-sm btn-outline-warning', :style => "margin-left:20px" do
+              .fa.fa-edit
+              Редактировать
+            = link_to post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-outline-danger', :style => "margin-left:20px" do
+              .fa.fa-trash
+              Удалить
+    %div{:style => "float:right"}  
+      = post.user.email
+  .card-footer
+    - if action_name == 'show'
+      = content_tag "div", id: "like-count" do
+        = render 'posts/likes', post: post
+      = content_tag "div", id: "like_link" do
+        = render 'posts/like_link', post: post
+    - else
+      Рейтинг:
+      = post.get_upvotes.size
+%hr
+%p
