@@ -3,13 +3,12 @@ class Post < ApplicationRecord
     validates :title, :content, presence: true
     has_rich_text :content
     belongs_to :user
-    has_many :comments
 
-    def subject
-      title
+    def replies
+      Comment.where("post_id = ? and parent_id == 0", self.id).order(["parent_id", "id"]).group_by { |comment| comment["parent_id"] }
     end
-  
-    def last_comment
-      comments.last
+
+    def comments
+      Comment.where("post_id = ? and parent_id != 0").order("id")
     end
   end

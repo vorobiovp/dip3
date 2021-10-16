@@ -14,3 +14,79 @@
     %p
     = render 'layouts/messages'
     = yield
+
+%footer.text-center.text-lg-start.bg-light.text-muted
+  / Section: Social media
+  %section.d-flex.justify-content-center.justify-content-lg-between.p-4.border-bottom
+    / Left
+    .me-5.d-none.d-lg-block
+      %span Свяжитесь со мной через социальные сети
+    / Left
+    / Right
+    %div
+      %a.me-4.text-reset{:href => "https://www.facebook.com/profile.php?id=100056610957187"}
+        %i.fab.fa-facebook-f
+      %a.me-4.text-reset{:href => "https://twitter.com/ernstkaltenbru"}
+        %i.fab.fa-twitter
+      %a.me-4.text-reset{:href => "https://www.instagram.com/yaroslavskiba/"}
+        %i.fab.fa-instagram
+      %a.me-4.text-reset{:href => "https://github.com/vorobiovp"}
+        %i.fab.fa-github
+    / Right
+  / Section: Social media
+  / Section: Links
+  %section
+    .container.text-center.text-md-start.mt-5
+      / Grid row
+      .row.mt-3
+        / Grid column
+        .col-md-3.col-lg-4.col-xl-3.mx-auto.mb-4
+          / Content
+          %h6.text-uppercase.fw-bold.mb-4
+            %i.fas.fa-gem.me-3>
+            ITNE 
+          %p
+            Дипломный проект для БГУИР 2022 по теме: Веб-приложение для ведения коллективного блога по теме информационные технологии
+        / Grid column
+        / Grid column
+        .col-md-2.col-lg-2.col-xl-2.mx-auto.mb-4
+          / Links
+
+        / Grid column
+        / Grid column
+        .col-md-3.col-lg-2.col-xl-2.mx-auto.mb-4
+          / Links
+          %h6.text-uppercase.fw-bold.mb-4
+            Используемые материалы:
+          %p
+            %a.text-reset{:href => "https://github.com"} Github
+          %p
+            %a.text-reset{:href => "https://ru.stackoverflow.com"} Stack Overflow
+          %p
+            %a.text-reset{:href => "https://habr.com/ru/all/"} Habr
+          %p
+
+        / Grid column
+        / Grid column
+        .col-md-4.col-lg-3.col-xl-3.mx-auto.mb-md-0.mb-4
+          / Links
+          %h6.text-uppercase.fw-bold.mb-4
+            Контакты:
+          %p
+            %i.fas.fa-home.me-3
+            Беларусь, г. Витебск. Почтовый индекс: 21000
+          %p
+            %i.fas.fa-envelope.me-3
+            sindusindorei@gmail.com
+            yaroslavskiba322@gmail.com
+          %p
+            %i.fas.fa-phone.me-3
+            +375 (29) 546 45 91
+        / Grid column
+      / Grid row
+  / Section: Links
+  / Copyright
+  .text-center.p-4{:style => "background-color: rgba(0, 0, 0, 0.05);"}
+    © 2022 БГУИР ИИТ ИПОИТ
+  / Copyright
+/ Footer

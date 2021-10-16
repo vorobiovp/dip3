@@ -128,6 +128,7 @@ GEM
     ffi (1.15.4)
     font-awesome-sass (5.15.1)
       sassc (>= 1.11)
+    foreman (0.87.2)
     globalid (0.5.2)
       activesupport (>= 5.0)
     haml (5.2.2)
@@ -336,6 +337,7 @@ DEPENDENCIES
   country_select
   devise
   font-awesome-sass (~> 5.15.1)
+  foreman
   haml-rails (~> 2.0)
   image_processing
   jbuilder (~> 2.7)

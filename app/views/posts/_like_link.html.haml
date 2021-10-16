@@ -1,2 +1,2 @@
-- vote_text = current_user&.voted_for?(@post) ? "dislike" : "like"
-= link_to vote_text, like_post_path(@post), method: :put, remote: :true
+- vote_text = current_user&.voted_for?(post) ? "dislike" : "like"
+= link_to vote_text, like_post_path(post), method: :put, remote: :true
