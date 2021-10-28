@@ -1,0 +1,11 @@
+.container
+  .row
+    .col-lg-6
+      %p
+        Hello #{@email}!
+      - if @resource.try(:unconfirmed_email?)
+        %p
+          Ваш адрес электронной почты изменен на #{@resource.unconfirmed_email}.
+      - else
+        %p
+          Ваш адрес электронной почты изменен на #{@resource.email}.

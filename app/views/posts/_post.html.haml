@@ -1,11 +1,13 @@
 .card
   .card-header
     = link_to post.title, post
+    %div{:style => "float:right"} 
+      = post.created_at
     / = post.title
   .card-body
     = post.content
   .card-footer
-    = post.created_at
+
     /= link_to 'Показать', post
     /= link_to 'Редактировать', edit_post_path(post)
     -if current_user
@@ -15,12 +17,11 @@
             = link_to edit_post_path(post), class: 'btn btn-sm btn-outline-warning', :style => "margin-left:20px" do
               .fa.fa-edit
               Редактировать
-            = link_to post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-outline-danger', :style => "margin-left:20px" do
+            = link_to post, method: :delete, data: { confirm: 'Вы уверены?' }, class: 'btn btn-sm btn-outline-danger', :style => "margin-left:20px" do
               .fa.fa-trash
               Удалить
     %div{:style => "float:right"}  
       = post.user.email
-  .card-footer
     - if action_name == 'show'
       = content_tag "div", id: "like-count" do
         = render 'posts/likes', post: post
@@ -29,5 +30,4 @@
     - else
       Рейтинг:
       = post.get_upvotes.size
-%hr
 %p

@@ -1,0 +1,7 @@
+.container
+  .row
+    .col-lg-6
+      %p
+        Добро пожаловать #{@email}!
+      %p Вы можете подтвердить ваш email по ссылке ниже:
+      %p= link_to 'Подтвердить учетную запись', confirmation_url(@resource, confirmation_token: @token)

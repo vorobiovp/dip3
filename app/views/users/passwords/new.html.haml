@@ -1,0 +1,14 @@
+.container
+  .row
+    .col-lg-6
+      %h2 Забыли пароль?
+      = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+        = f.error_notification
+        .form-inputs
+          = f.input :email,                       
+            required: true,                       
+            autofocus: true,                      
+            input_html: { autocomplete: "email" } 
+        .form-actions
+          = f.button :submit, "Инструкции для смены пароля", class: 'nav-link', class: 'btn btn-outline-dark',style: "margin-top:20px"
+      = render "users/shared/links"
