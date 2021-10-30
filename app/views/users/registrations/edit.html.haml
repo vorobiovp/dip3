@@ -22,8 +22,7 @@
             required: true,                                  
             input_html: { autocomplete: "current-password" } 
         .form-actions
-          = f.button :submit, "Update", class: 'nav-link', class: 'btn btn-outline-dark',style: "margin-top:20px"
+          = f.button :submit, "Сохранить", class: 'btn btn-outline-dark',style: "margin-top:20px"
       %h3 Удаление учетной записи
       %p
-        Что-то не понравилось? #{link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-      = link_to "Back", :back
+        Что-то не понравилось? #{link_to "Удалить учетную запись", registration_path(resource_name), data: { confirm: "Вы уверены?" }, method: :delete}
