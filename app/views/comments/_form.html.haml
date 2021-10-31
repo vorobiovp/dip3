@@ -1,0 +1,10 @@
+.container
+  .row
+    .col-lg-8
+      .card-body
+        %h6 Комментариев: (#{@post.comments.size}) 
+        = form_for [ @post, @comment ] do |f|
+          %p
+            = f.text_area :body, :cols => 66, :rows => 5
+          %p
+            = f.submit "Отправить", class: 'btn btn-outline-dark'

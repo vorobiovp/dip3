@@ -1,4 +1,9 @@
 
 = render 'posts/post', post: @post
-
+.card.border-light
+    .card-body
+        = render partial: 'comments/form'
+        = render partial: 'posts/comment', collection: @post.comments.reverse
+%br
+%br
 

@@ -1,0 +1,12 @@
+.container
+  .row
+    .col-lg-8
+      .card-body
+        %div
+          .card.border-secondary
+            .card-header
+              %h6
+                Комментарий пользователя:
+                = current_user.email
+                
+              %p.comment= comment.body
