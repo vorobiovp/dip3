@@ -6,11 +6,12 @@ Rails.application.routes.draw do
       put "like", to: "posts#like"
     end
   end
+  
   root "posts#index"
   get "static_pages/index"
   get "privacy_policy", to: "static_pages#privacy_policy"
   
   get 'posts', to: 'posts#index'
-
+  resources :tags
 end
 

@@ -9,6 +9,7 @@
         .form-inputs
           = f.input :title
           = f.input :content, as: :rich_text_area
+          = f.input :tag_list
 
         .form-actions
         = f.submit ( f.object.new_record? ? "Создать" : "Обновить"), class: 'nav-link', class: 'btn btn-outline-dark',style: "margin-top:20px"
