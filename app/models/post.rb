@@ -1,6 +1,7 @@
 class Post < ApplicationRecord
     acts_as_votable
-    validates :title, :content, presence: true
+    validates :content, presence: true
+    validates :title, presence: true
     has_rich_text :content
     belongs_to :user
     has_many :taggings

@@ -1,4 +1,4 @@
-- vote_text = current_user&.voted_for?(@post) ? "Не нравится" : "Нравится"
+- vote_text = current_user&.voted_for?(@post) ? "Dislike" : "Like"
 = link_to vote_text, like_post_path(@post), method: :put, remote: :true, :style=>'color:#000000;', class: 'initialism'
 %i.far.fa-thumbs-up
 %p
