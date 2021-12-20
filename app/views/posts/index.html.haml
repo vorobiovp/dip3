@@ -11,6 +11,6 @@
           %input.form-control.rounded{"aria-describedby" => "search-addon", "aria-label" => "Search", :placeholder => "Поиск по тегу", :type => "search"}/
           %span#search-addon.input-group-text.border-0
             %i.fas.fa-search
-    = will_paginate @posts, renderer: WillPaginate::ActionView::BootstrapLinkRenderer
+    = paginate @posts
     %br
     %br

@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.order(created_at: :desc).paginate(page: params[:page], per_page: 6)
+    @posts = Post.order(created_at: :desc).page(params[:page]).per(6)
 
   end
 
@@ -87,7 +87,6 @@ class PostsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_post
     @post = Post.find(params[:id])
-    @tag = Tag.find(params[:id])
 
   end
 
