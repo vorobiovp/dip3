@@ -5,12 +5,18 @@
       - @posts.each do |post|
         = render 'posts/post', post: post
     .col-sm-4  
-      .card-md-4       
-        .card-body Поиск:
-        .input-group.rounded
-          %input.form-control.rounded{"aria-describedby" => "search-addon", "aria-label" => "Search", :placeholder => "Поиск по тегу", :type => "search"}/
-          %span#search-addon.input-group-text.border-0
-            %i.fas.fa-search
-    = paginate @posts
+      .card-md-4  
+      %br
+        Поиск тегов:
+        = search_form_for @q do |f|
+          = f.search_field :tags_name_cont, class: 'form-control'
+          = f.submit class: 'btn btn-outline-dark',style: "margin-top:20px"
+          = link_to "Clear", request.path, class: 'btn btn-outline-dark',style: "margin-top:20px"
+          
+    .digg_pagination
+      .page_info
+        = page_entries_info @posts
+      = will_paginate @posts, :container => false
+    %br
     %br
     %br

@@ -357,6 +357,7 @@ GEM
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    will_paginate (3.3.1)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.4.2)
@@ -379,7 +380,6 @@ DEPENDENCIES
   image_processing
   jbuilder (~> 2.7)
   jquery-rails
-  kaminari
   listen (~> 3.3)
   mini_magick
   omniauth-google-oauth2
@@ -388,6 +388,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.4, >= 6.1.4.1)
+  ransack
   react-rails
   sass-rails (>= 6)
   selenium-webdriver
@@ -397,6 +398,7 @@ DEPENDENCIES
   web-console (>= 4.1.0)
   webdrivers
   webpacker (~> 5.0)
+  will_paginate (~> 3.3)
 
 RUBY VERSION
    ruby 2.7.4p191
